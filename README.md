@@ -23,14 +23,12 @@ The assets included in the project are:
 
 ## Dockerfile
 
-This project uses a compute environment based on dominodatalab/base:Ubuntu18_DAD_Py3.7_R3.6_20200508
+This project uses a compute environment based on dominodatalab/base:quay.io/domino/standard-environment:ubuntu18-py3.8-r4.1-domino5.1
 
-Add the following entries to the Dockerfile:
+Add the following entry to the Dockerfile:
 
 ```
-RUN echo "ubuntu    ALL=NOPASSWD: ALL" >> /etc/sudoers
-RUN pip install --upgrade pip
-RUN pip install imblearn && pip install xgboost
+RUN pip install imblearn
 ```
 
 ## Model API
