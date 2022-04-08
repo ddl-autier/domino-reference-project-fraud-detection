@@ -186,7 +186,7 @@ def main(args):
     print("Saving the model...")
     model.save_model("./model/smote_fraud.xgb")
     
-    with open('dominostats.json', 'w') as f:
+    with open('/mnt/artifacts/dominostats.json', 'w') as f:
       f.write(json.dumps({"AUC score": auc}))
  
 if __name__=='__main__':

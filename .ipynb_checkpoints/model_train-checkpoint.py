@@ -170,7 +170,7 @@ def main(args):
     
     args = parser.parse_args()
     
-    dataDF = load_data("./dataset/creditcard.csv")
+    dataDF = load_data("/mnt/data/Fraud_Detection/creditcard.csv")
     X_train, y_train, X_test, y_test = get_train_test(dataDF)
     best_params = grid_search(X_train, y_train, args.gridsearch_verbose, args.nrows_search)
     
@@ -186,7 +186,7 @@ def main(args):
     print("Saving the model...")
     model.save_model("./model/smote_fraud.xgb")
     
-    with open('dominostats.json', 'w') as f:
+    with open('/mnt/artifacts/dominostats.json', 'w') as f:
       f.write(json.dumps({"AUC score": auc}))
  
 if __name__=='__main__':
