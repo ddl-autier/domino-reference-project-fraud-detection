@@ -113,7 +113,7 @@ def train_model(X, y, params):
     model.fit(X, y)
     return model
 
-def roc_curve(fp_r, tp_r, auc, roc_curve_filename="./model/roc_curve.png"):
+def roc_curve(fp_r, tp_r, auc, roc_curve_filename="/mnt/artifacts/results/roc_curve.png"):
 
     plt.figure(figsize=(8, 6))
 
@@ -127,7 +127,7 @@ def roc_curve(fp_r, tp_r, auc, roc_curve_filename="./model/roc_curve.png"):
     plt.title("ROC Curve")
     plt.savefig(roc_curve_filename)
     
-def conf_matrix(y_pred, y_test, threshold, filename="./model/conf_matrix.png"):
+def conf_matrix(y_pred, y_test, threshold, filename="/mnt/artifacts/results/conf_matrix.png"):
     
     plt.figure(figsize=(5,5))
     y_pred_int = (y_pred > threshold).astype(int)
@@ -184,7 +184,7 @@ def main(args):
     auc = evaluate(model, X_test, y_test)
 
     print("Saving the model...")
-    model.save_model("./model/smote_fraud.xgb")
+    model.save_model("/mnt/artifacts/model/smote_fraud.xgb")
     
     with open('/mnt/artifacts/dominostats.json', 'w') as f:
       f.write(json.dumps({"AUC score": auc}))

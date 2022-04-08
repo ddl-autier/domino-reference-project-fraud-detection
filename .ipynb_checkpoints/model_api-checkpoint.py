@@ -7,7 +7,7 @@ import numpy as np
 
 model = XGBClassifier()
 booster = Booster()
-booster.load_model('./model/smote_fraud.xgb')
+booster.load_model('/mnt/artifacts/model/smote_fraud.xgb')
 model._Booster = booster
 
 def score(V1, V2, V3, V4, V5, V6, V7, V8, V9, V10, V11, V12,
