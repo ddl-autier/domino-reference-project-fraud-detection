@@ -16,7 +16,7 @@
 #python app-dash.py
 
 pip install dash==2.0.1 --user
-pip instal jupyter-dash==0.4.1
+pip instal jupyter-dash==0.4.1 --user
 python app-bees.py
 
 
