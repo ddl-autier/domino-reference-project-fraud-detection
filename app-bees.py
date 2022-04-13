@@ -1,10 +1,34 @@
 import pandas as pd
 import plotly.express as px  # (version 4.7.0 or higher)
 import plotly.graph_objects as go
-from dash import Dash, dcc, html, Input, Output  # pip install dash (version 2.0.0 or higher)
+import subprocess
+import dash
+from dash.dependencies import Input, Output, State
+import dash_core_components as dcc
+import dash_html_components as html
+import dash_table_experiments as dt
+import json
+import numpy as np
 
+app = dash.Dash()
 
-app = Dash(__name__)
+app.scripts.config.serve_locally = True
+# app.css.config.serve_locally = True
+
+################################################################
+# Configure path for dependencies. This is required for Domino.
+# Learn more about Dash on Domino https://blog.dominodatalab.com/building-domino-web-app-dash/
+
+# For Dash >= 0.18.3
+app.config.update({
+#### as the proxy server may remove the prefix
+'routes_pathname_prefix': '',
+
+#### the front-end will prefix this string to the requests
+#### that are made to the proxy server
+'requests_pathname_prefix': ''
+})
+
 
 # -- Import and clean data (importing csv into pandas)
 # df = pd.read_csv("intro_bees.csv")
