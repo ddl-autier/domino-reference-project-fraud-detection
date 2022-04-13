@@ -9,6 +9,7 @@ import numpy as np
 
 app = dash.Dash(__name__)
 
+del app.config._read_only["requests_pathname_prefix"]
 app.scripts.config.serve_locally = True
 # app.css.config.serve_locally = True
 
@@ -113,4 +114,4 @@ def update_graph(option_slctd):
 
 # ------------------------------------------------------------------------------
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(host='0.0.0.0',port=8888) # Domino hosts all apps at 0.0.0.0:8888
