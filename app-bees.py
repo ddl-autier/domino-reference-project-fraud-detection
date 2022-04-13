@@ -1,12 +1,7 @@
 import pandas as pd
 import plotly.express as px  # (version 4.7.0 or higher)
 import plotly.graph_objects as go
-import subprocess
-import dash
-from dash.dependencies import Input, Output, State
-import dash_core_components as dcc
-import dash_html_components as html
-import dash_table_experiments as dt
+from dash import Dash, dcc, html, Input, Output  # pip install dash (version 2.0.0 or higher)
 import json
 import numpy as np
 
