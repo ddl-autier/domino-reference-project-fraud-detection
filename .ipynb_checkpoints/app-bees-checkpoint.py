@@ -40,34 +40,13 @@ print(df[:5])
 # App layout
 app.layout = html.Div([
 
-    html.H1("Web Application Dashboards with Dash", style={'text-align': 'center'}),
-
-    dcc.Dropdown(id="slct_year",
-                 options=[
-                     {"label": "2015", "value": 2015},
-                     {"label": "2016", "value": 2016},
-                     {"label": "2017", "value": 2017},
-                     {"label": "2018", "value": 2018}],
-                 multi=False,
-                 value=2015,
-                 style={'width': "40%"}
-                 ),
-
-    html.Div(id='output_container', children=[]),
-    html.Br(),
-
-    dcc.Graph(id='my_bee_map', figure={})
-
+    html.H1("Web Application Dashboards with Dash", style={'text-align': 'center'})
 ])
 
 
 # ------------------------------------------------------------------------------
 # Connect the Plotly graphs with Dash Components
-@app.callback(
-    [Output(component_id='output_container', component_property='children'),
-     Output(component_id='my_bee_map', component_property='figure')],
-    [Input(component_id='slct_year', component_property='value')]
-)
+@app.callback()
 def update_graph(option_slctd):
     print(option_slctd)
     print(type(option_slctd))
