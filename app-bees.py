@@ -5,7 +5,7 @@ from dash import Dash, dcc, html, Input, Output  # pip install dash (version 2.0
 import json
 import numpy as np
 
-app = dash.Dash()
+app = dash.Dash(__name__)
 
 app.scripts.config.serve_locally = True
 # app.css.config.serve_locally = True
