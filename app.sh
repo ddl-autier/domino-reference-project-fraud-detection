@@ -13,7 +13,8 @@
 
 # # Dash example
 pip install -r requirements_apps.txt --user
-python app-dash.py
+python app-bees.py
+#python app-dash.py
 
 # R/Shiny example
 #R -e 'shiny::runApp("./", port=8888, host="0.0.0.0")'
