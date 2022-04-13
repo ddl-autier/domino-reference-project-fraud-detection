@@ -15,7 +15,8 @@
 #pip install -r requirements_apps.txt --user
 #python app-dash.py
 
-pip install dash>=2.0.0 --user
+pip install dash==2.0.1 --user
+pip instal jupyter-dash==0.4.1
 python app-bees.py
 
 

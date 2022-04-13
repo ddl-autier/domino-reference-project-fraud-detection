@@ -9,6 +9,7 @@ import numpy as np
 
 app = dash.Dash(__name__)
 
+del app.config._read_only["requests_pathname_prefix"]
 app.scripts.config.serve_locally = True
 # app.css.config.serve_locally = True
 
