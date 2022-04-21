@@ -33,7 +33,7 @@ app.config.update({
 # app.config.requests_pathname_prefix=''
 #################################################################
 
-#DF_WALMART = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/1962_2006_walmart_store_openings.csv')
+DF_WALMART = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/1962_2006_walmart_store_openings.csv')
 
 DF_GAPMINDER = pd.read_csv(
     'https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv'
@@ -100,7 +100,7 @@ def update_figure(rows, selected_row_indices):
     dff = pd.DataFrame(rows)
     fig = plotly.tools.make_subplots(
         rows=3, cols=1,
-        subplot_titles=('GDP Per Capita', 'Population',),
+        subplot_titles=('Life Expectancy', 'GDP Per Capita', 'Population',),
         shared_xaxes=True)
     marker = {'color': ['#0074D9']*len(dff)}
     for i in (selected_row_indices or []):
