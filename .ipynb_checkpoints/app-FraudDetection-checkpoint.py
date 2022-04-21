@@ -33,37 +33,16 @@ app.config.update({
 # app.config.requests_pathname_prefix=''
 #################################################################
 
-DF_WALMART = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/1962_2006_walmart_store_openings.csv')
-
-DF_GAPMINDER = pd.read_csv(
-    'https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv'
-)
-DF_GAPMINDER = DF_GAPMINDER[DF_GAPMINDER['year'] == 2007]
-DF_GAPMINDER.loc[0:20]
-
-DF_SIMPLE = pd.DataFrame({
-    'x': ['A', 'B', 'C', 'D', 'E', 'F'],
-    'y': [4, 3, 1, 2, 3, 6],
-    'z': ['a', 'b', 'c', 'a', 'b', 'c']
-})
-
-ROWS = [
-    {'a': 'AA', 'b': 1},
-    {'a': 'AB', 'b': 2},
-    {'a': 'BB', 'b': 3},
-    {'a': 'BC', 'b': 4},
-    {'a': 'CC', 'b': 5},
-    {'a': 'CD', 'b': 6}
-]
+DF_DATASAMPLE=pd.read_csv("/mnt/data/Fraud_Detection/webapp_sets/records_set3.csv")
 
 
 app.layout = html.Div([
-    html.H4('Gapminder DataTable'),
+    html.H4('DataTable'),
     dt.DataTable(
-        rows=DF_GAPMINDER.to_dict('records'),
+        rows=DF_DATASAMPLE.to_dict('records'),
 
         # optional - sets the order of columns
-        columns=sorted(DF_GAPMINDER.columns),
+        columns=sorted(DF_DATASAMPLE.columns),
 
         row_selectable=True,
         filterable=True,
