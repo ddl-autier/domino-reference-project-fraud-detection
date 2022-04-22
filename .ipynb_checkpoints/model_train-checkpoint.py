@@ -170,7 +170,7 @@ def main(args):
     
     args = parser.parse_args()
     
-    dataDF = load_data("/mnt/data/Fraud_Detection/creditcard.csv")
+    dataDF = load_data("/mnt/data/Fraud_Detection/*.csv")
     X_train, y_train, X_test, y_test = get_train_test(dataDF)
     best_params = grid_search(X_train, y_train, args.gridsearch_verbose, args.nrows_search)
     
